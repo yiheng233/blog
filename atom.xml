@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>yiheng233&#39;s Blog</title>
+  <icon>https://blog.yiheng233.com/icon.png</icon>
+  <subtitle>Come and Play Here</subtitle>
+  <link href="https://blog.yiheng233.com/atom.xml" rel="self"/>
+  
+  <link href="https://blog.yiheng233.com/"/>
+  <updated>2022-11-26T18:26:56.001Z</updated>
+  <id>https://blog.yiheng233.com/</id>
+  
+  <author>
+    <name>yiheng233</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Add-kali-source-to-ubuntu</title>
+    <link href="https://blog.yiheng233.com/2022/11/27/Add-kali-source-to-ubuntu/"/>
+    <id>https://blog.yiheng233.com/2022/11/27/Add-kali-source-to-ubuntu/</id>
+    <published>2022-11-26T18:25:25.000Z</published>
+    <updated>2022-11-26T18:26:56.001Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;电脑坏了！！！别学&quot;&gt;&lt;a href=&quot;#电脑坏了！！！别学&quot; class=&quot;headerlink&quot; title=&quot;电脑坏了！！！别学&quot;&gt;&lt;/a&gt;电脑坏了！！！别学&lt;/h1&gt;&lt;h1 id=&quot;把kali的源添加到ubuntu中&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="linux" scheme="https://blog.yiheng233.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>run-x86-on-arm64-ubuntu</title>
+    <link href="https://blog.yiheng233.com/2022/11/27/run-x86-on-arm64-ubuntu/"/>
+    <id>https://blog.yiheng233.com/2022/11/27/run-x86-on-arm64-ubuntu/</id>
+    <published>2022-11-26T18:25:00.000Z</published>
+    <updated>2022-11-26T18:26:45.070Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;在arm64-ubuntu中运行-x86-64-程序&quot;&gt;&lt;a href=&quot;#在arm64-ubuntu中运行-x86-64-程序&quot; class=&quot;headerlink&quot; title=&quot;在arm64 ubuntu中运行 x86-64 程序&quot;&gt;&lt;/a&gt;在arm64</summary>
+        
+      
+    
+    
+    
+    
+    <category term="linux" scheme="https://blog.yiheng233.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://blog.yiheng233.com/2022/11/27/test/"/>
+    <id>https://blog.yiheng233.com/2022/11/27/test/</id>
+    <published>2022-11-26T18:18:08.000Z</published>
+    <updated>2022-11-26T18:18:08.591Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://blog.yiheng233.com/2022/11/27/hello-world/"/>
+    <id>https://blog.yiheng233.com/2022/11/27/hello-world/</id>
+    <published>2022-11-26T17:35:13.857Z</published>
+    <updated>2022-11-26T17:35:13.857Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
