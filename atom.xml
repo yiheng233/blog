@@ -6,7 +6,7 @@
   <link href="https://blog.yiheng233.com/atom.xml" rel="self"/>
   
   <link href="https://blog.yiheng233.com/"/>
-  <updated>2022-11-27T08:02:21.888Z</updated>
+  <updated>2022-12-16T08:07:24.324Z</updated>
   <id>https://blog.yiheng233.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bilibili-bv-and-av-convert</title>
+    <link href="https://blog.yiheng233.com/2022/12/16/bilibili-bv-and-av-convert/"/>
+    <id>https://blog.yiheng233.com/2022/12/16/bilibili-bv-and-av-convert/</id>
+    <published>2022-12-16T06:19:46.000Z</published>
+    <updated>2022-12-16T08:07:24.324Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;bv-av-互相转换&quot;&gt;&lt;a href=&quot;#bv-av-互相转换&quot; class=&quot;headerlink&quot; title=&quot;bv av 互相转换&quot;&gt;&lt;/a&gt;bv av 互相转换&lt;/h1&gt;&lt;h2 id=&quot;这是c-代码&quot;&gt;&lt;a href=&quot;#这是c-代码&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="bilibili" scheme="https://blog.yiheng233.com/tags/bilibili/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo d command rewrite the chame file on github pages</title>
