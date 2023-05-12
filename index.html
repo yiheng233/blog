@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://blog.yiheng233.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.yiheng233.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-mergesort" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/04/17/mergesort/" class="article-date">
+  <time class="dt-published" datetime="2023-04-16T18:50:31.000Z" itemprop="datePublished">2023-04-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/04/17/mergesort/">mergesort</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><h3 id="没啥好说的，简单记一笔，试了一下确实比冒泡快。"><a href="#没啥好说的，简单记一笔，试了一下确实比冒泡快。" class="headerlink" title="没啥好说的，简单记一笔，试了一下确实比冒泡快。"></a>没啥好说的，简单记一笔，试了一下确实比冒泡快。</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> Header_h</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Header_h</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MergeSort</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">exchange</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span>* b)</span></span>&#123;</span><br><span class="line">        *a=(*a)^(*b);</span><br><span class="line">        *b=(*a)^(*b);</span><br><span class="line">        *a=(*a)^(*b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">merge</span><span class="params">(<span class="type">int</span>* head1,<span class="type">int</span>* end1,<span class="type">int</span>* head2,<span class="type">int</span>* end2,<span class="type">int</span>* ansPlace)</span></span>&#123;</span><br><span class="line">        <span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> length=end1-head1+end2-head2+<span class="number">2</span>;</span><br><span class="line">        <span class="type">int</span>* ans=(<span class="type">int</span>*)<span class="built_in">malloc</span>((length)*<span class="built_in">sizeof</span>(*head1));</span><br><span class="line">        <span class="type">int</span>* pointer1=head1;</span><br><span class="line">        <span class="type">int</span>* pointer2=head2;</span><br><span class="line">        <span class="type">int</span>* pointer3=ans;</span><br><span class="line">        <span class="type">int</span> i=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(;;i++)&#123;</span><br><span class="line">            ;</span><br><span class="line">            <span class="keyword">if</span> (*pointer1&gt;*pointer2) &#123;</span><br><span class="line">                *pointer3=*pointer2;</span><br><span class="line">                <span class="keyword">if</span> (pointer2==end2) &#123;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="type">int</span>* j=pointer1; j&lt;=end1; j++) &#123;</span><br><span class="line">                        pointer3++;</span><br><span class="line">                        *pointer3=*j;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">goto</span> outside;</span><br><span class="line">                &#125;</span><br><span class="line">                pointer2++;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                *pointer3=*pointer1;</span><br><span class="line">                <span class="keyword">if</span> (pointer1==end1) &#123;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="type">int</span>* j=pointer2; j&lt;=end2; j++) &#123;</span><br><span class="line">                        pointer3++;</span><br><span class="line">                        *pointer3=*j;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">goto</span> outside;</span><br><span class="line">                &#125;</span><br><span class="line">                pointer1++;</span><br><span class="line">            &#125;</span><br><span class="line">            pointer3++;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    outside:;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;length;i++) &#123;</span><br><span class="line">            ansPlace[i]=ans[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">int</span>* <span class="title">sort</span><span class="params">(<span class="type">int</span>* head,<span class="type">int</span>* end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (end-head&gt;<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="built_in">merge</span>(<span class="built_in">sort</span>(head, head+(end-head)/<span class="number">2</span>), head+(end-head)/<span class="number">2</span>, <span class="built_in">sort</span>(head+(end-head)/<span class="number">2</span>+<span class="number">1</span>, end), end, head);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (end-head==<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (*end&lt;*head) &#123;</span><br><span class="line">                <span class="built_in">exchange</span>(head, end);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">/* Header_h */</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.yiheng233.com/2023/04/17/mergesort/" data-id="clhkt1i800009ow6wby6ghdv9" data-title="mergesort" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-sort-algorithm/" rel="tag">c++ sort algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-bilibili-shorten-link-tracker-remover" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/20/bilibili-shorten-link-tracker-remover/" class="article-date">
+  <time class="dt-published" datetime="2023-03-19T17:20:37.000Z" itemprop="datePublished">2023-03-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/20/bilibili-shorten-link-tracker-remover/">bilibili-shorten-link-tracker-remover</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="bilibili的短链接跟踪器删除"><a href="#bilibili的短链接跟踪器删除" class="headerlink" title="bilibili的短链接跟踪器删除"></a>bilibili的短链接跟踪器删除</h1><p>在生成的同时会记录用户的隐私信息，用这个程序可以删除所有b23.tv连接里的GET参数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  main.cpp</span></span><br><span class="line"><span class="comment">//  bilibili-url-convert</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;curl/curl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">httpcontents</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    string contents;</span><br><span class="line">    CURLcode res;</span><br><span class="line">    CURL *curl;</span><br><span class="line">    <span class="type">long</span> code;</span><br><span class="line">&#125;;</span><br><span class="line">string httpredirectlocationstring,inputurl;</span><br><span class="line"><span class="type">char</span> *httpredirectlocation=<span class="literal">NULL</span>;</span><br><span class="line">httpcontents hc;</span><br><span class="line"><span class="function"><span class="type">size_t</span> <span class="title">writecallback</span><span class="params">(<span class="type">char</span> *ptr,<span class="type">size_t</span> size,<span class="type">size_t</span> nmemb,httpcontents *data)</span></span>&#123;</span><br><span class="line">    data-&gt;contents=<span class="string">&quot;&quot;</span>;<span class="comment">//make it emepty</span></span><br><span class="line">    <span class="keyword">if</span> (size*nmemb&gt;<span class="number">1000</span>) &#123;<span class="comment">//prevent illegal input</span></span><br><span class="line">        <span class="keyword">return</span> size*nmemb;</span><br><span class="line">    &#125;</span><br><span class="line">    data-&gt;contents+=ptr;<span class="comment">//add the contnets to the string</span></span><br><span class="line">    <span class="keyword">return</span> size*nmemb;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">const</span> <span class="type">char</span> * argv[])</span> </span>&#123;</span><br><span class="line">    <span class="comment">// insert code here...</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">curl_global_init</span>(CURL_GLOBAL_DEFAULT);</span><br><span class="line">    hc.curl=<span class="built_in">curl_easy_init</span>();</span><br><span class="line">    <span class="keyword">if</span> (argc!=<span class="number">2</span>) &#123;<span class="comment">//wrong input expression</span></span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;./bilibili-url-convert &lt;url&gt;&quot;</span>;</span><br><span class="line">        <span class="keyword">goto</span> end;</span><br><span class="line">    &#125;</span><br><span class="line">    inputurl=argv[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">if</span> (argc!=<span class="number">2</span>||inputurl.<span class="built_in">size</span>()&lt;<span class="number">16</span>||inputurl.<span class="built_in">size</span>()&gt;<span class="number">30</span>) &#123;<span class="comment">//wrong input expression</span></span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;./bilibili-url-convert &lt;url&gt;&quot;</span>;</span><br><span class="line">        <span class="keyword">goto</span> end;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (inputurl[<span class="number">4</span>]!=<span class="string">&#x27;s&#x27;</span>) &#123;</span><br><span class="line">        inputurl.<span class="built_in">insert</span>(<span class="number">4</span>, <span class="string">&quot;s&quot;</span>);<span class="comment">//convert http:// to https://</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (hc.curl) &#123;<span class="comment">//performing the curl get</span></span><br><span class="line">        <span class="built_in">curl_easy_setopt</span>(hc.curl, CURLOPT_URL,&amp;(inputurl[<span class="number">0</span>]));<span class="comment">//using termainl input</span></span><br><span class="line">        <span class="built_in">curl_easy_setopt</span>(hc.curl, CURLOPT_WRITEFUNCTION,writecallback);<span class="comment">//saving the contents to the string</span></span><br><span class="line">        <span class="built_in">curl_easy_setopt</span>(hc.curl, CURLOPT_WRITEDATA,&amp;hc);</span><br><span class="line">        hc.res=<span class="built_in">curl_easy_perform</span>(hc.curl);</span><br><span class="line">        <span class="built_in">curl_easy_getinfo</span>(hc.curl, CURLINFO_RESPONSE_CODE,&amp;(hc.code));<span class="comment">//find out if it equal to 300</span></span><br><span class="line">        <span class="keyword">if</span> (hc.code/<span class="number">100</span>==<span class="number">3</span>) &#123;</span><br><span class="line">            <span class="built_in">curl_easy_getinfo</span>(hc.curl, CURLINFO_REDIRECT_URL,&amp;httpredirectlocation);</span><br><span class="line">            httpredirectlocationstring=httpredirectlocation;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (hc.res!= CURLE_OK) &#123;<span class="comment">//facing error</span></span><br><span class="line">            cout&lt;&lt;<span class="string">&quot;network error&quot;</span>;</span><br><span class="line">            <span class="keyword">goto</span> end;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (httpredirectlocation==<span class="literal">NULL</span>) &#123;</span><br><span class="line">            cout&lt;&lt;<span class="string">&quot;it isn&#x27;t a bilibili shorten with link http code:&quot;</span>&lt;&lt;hc.code&lt;&lt;endl;</span><br><span class="line">            cout&lt;&lt;hc.contents&lt;&lt;endl;</span><br><span class="line">            <span class="keyword">goto</span> end;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (httpredirectlocationstring.<span class="built_in">find</span>(<span class="string">&quot;?&quot;</span>)&gt;httpredirectlocationstring.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            cout&lt;&lt;<span class="string">&quot;it isn&#x27;t a bilibili shorten link(no tracker)\nfollowing the http respond:\n&quot;</span>&lt;&lt;endl;</span><br><span class="line">            cout&lt;&lt;hc.contents&lt;&lt;endl;</span><br><span class="line">            <span class="keyword">goto</span> end;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>; i&lt;httpredirectlocationstring.<span class="built_in">find</span>(<span class="string">&quot;?&quot;</span>); i++) &#123;</span><br><span class="line">            cout&lt;&lt;httpredirectlocationstring[i];</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    end:<span class="comment">//the place goto when facing errors</span></span><br><span class="line">    <span class="built_in">curl_global_cleanup</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Copyleft using GPLv3 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br></pre></td><td class="code"><pre><span class="line">                   GNU LESSER GENERAL PUBLIC LICENSE</span><br><span class="line">                       Version 3, 29 June 2007</span><br><span class="line"></span><br><span class="line"> Copyright (C) 2007 Free Software Foundation, Inc. &lt;https://fsf.org/&gt;</span><br><span class="line"> Everyone is permitted to copy and distribute verbatim copies</span><br><span class="line"> of this license document, but changing it is not allowed.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  This version of the GNU Lesser General Public License incorporates</span><br><span class="line">the terms and conditions of version 3 of the GNU General Public</span><br><span class="line">License, supplemented by the additional permissions listed below.</span><br><span class="line"></span><br><span class="line">  0. Additional Definitions.</span><br><span class="line"></span><br><span class="line">  As used herein, &quot;this License&quot; refers to version 3 of the GNU Lesser</span><br><span class="line">General Public License, and the &quot;GNU GPL&quot; refers to version 3 of the GNU</span><br><span class="line">General Public License.</span><br><span class="line"></span><br><span class="line">  &quot;The Library&quot; refers to a covered work governed by this License,</span><br><span class="line">other than an Application or a Combined Work as defined below.</span><br><span class="line"></span><br><span class="line">  An &quot;Application&quot; is any work that makes use of an interface provided</span><br><span class="line">by the Library, but which is not otherwise based on the Library.</span><br><span class="line">Defining a subclass of a class defined by the Library is deemed a mode</span><br><span class="line">of using an interface provided by the Library.</span><br><span class="line"></span><br><span class="line">  A &quot;Combined Work&quot; is a work produced by combining or linking an</span><br><span class="line">Application with the Library.  The particular version of the Library</span><br><span class="line">with which the Combined Work was made is also called the &quot;Linked</span><br><span class="line">Version&quot;.</span><br><span class="line"></span><br><span class="line">  The &quot;Minimal Corresponding Source&quot; for a Combined Work means the</span><br><span class="line">Corresponding Source for the Combined Work, excluding any source code</span><br><span class="line">for portions of the Combined Work that, considered in isolation, are</span><br><span class="line">based on the Application, and not on the Linked Version.</span><br><span class="line"></span><br><span class="line">  The &quot;Corresponding Application Code&quot; for a Combined Work means the</span><br><span class="line">object code and/or source code for the Application, including any data</span><br><span class="line">and utility programs needed for reproducing the Combined Work from the</span><br><span class="line">Application, but excluding the System Libraries of the Combined Work.</span><br><span class="line"></span><br><span class="line">  1. Exception to Section 3 of the GNU GPL.</span><br><span class="line"></span><br><span class="line">  You may convey a covered work under sections 3 and 4 of this License</span><br><span class="line">without being bound by section 3 of the GNU GPL.</span><br><span class="line"></span><br><span class="line">  2. Conveying Modified Versions.</span><br><span class="line"></span><br><span class="line">  If you modify a copy of the Library, and, in your modifications, a</span><br><span class="line">facility refers to a function or data to be supplied by an Application</span><br><span class="line">that uses the facility (other than as an argument passed when the</span><br><span class="line">facility is invoked), then you may convey a copy of the modified</span><br><span class="line">version:</span><br><span class="line"></span><br><span class="line">   a) under this License, provided that you make a good faith effort to</span><br><span class="line">   ensure that, in the event an Application does not supply the</span><br><span class="line">   function or data, the facility still operates, and performs</span><br><span class="line">   whatever part of its purpose remains meaningful, or</span><br><span class="line"></span><br><span class="line">   b) under the GNU GPL, with none of the additional permissions of</span><br><span class="line">   this License applicable to that copy.</span><br><span class="line"></span><br><span class="line">  3. Object Code Incorporating Material from Library Header Files.</span><br><span class="line"></span><br><span class="line">  The object code form of an Application may incorporate material from</span><br><span class="line">a header file that is part of the Library.  You may convey such object</span><br><span class="line">code under terms of your choice, provided that, if the incorporated</span><br><span class="line">material is not limited to numerical parameters, data structure</span><br><span class="line">layouts and accessors, or small macros, inline functions and templates</span><br><span class="line">(ten or fewer lines in length), you do both of the following:</span><br><span class="line"></span><br><span class="line">   a) Give prominent notice with each copy of the object code that the</span><br><span class="line">   Library is used in it and that the Library and its use are</span><br><span class="line">   covered by this License.</span><br><span class="line"></span><br><span class="line">   b) Accompany the object code with a copy of the GNU GPL and this license</span><br><span class="line">   document.</span><br><span class="line"></span><br><span class="line">  4. Combined Works.</span><br><span class="line"></span><br><span class="line">  You may convey a Combined Work under terms of your choice that,</span><br><span class="line">taken together, effectively do not restrict modification of the</span><br><span class="line">portions of the Library contained in the Combined Work and reverse</span><br><span class="line">engineering for debugging such modifications, if you also do each of</span><br><span class="line">the following:</span><br><span class="line"></span><br><span class="line">   a) Give prominent notice with each copy of the Combined Work that</span><br><span class="line">   the Library is used in it and that the Library and its use are</span><br><span class="line">   covered by this License.</span><br><span class="line"></span><br><span class="line">   b) Accompany the Combined Work with a copy of the GNU GPL and this license</span><br><span class="line">   document.</span><br><span class="line"></span><br><span class="line">   c) For a Combined Work that displays copyright notices during</span><br><span class="line">   execution, include the copyright notice for the Library among</span><br><span class="line">   these notices, as well as a reference directing the user to the</span><br><span class="line">   copies of the GNU GPL and this license document.</span><br><span class="line"></span><br><span class="line">   d) Do one of the following:</span><br><span class="line"></span><br><span class="line">       0) Convey the Minimal Corresponding Source under the terms of this</span><br><span class="line">       License, and the Corresponding Application Code in a form</span><br><span class="line">       suitable for, and under terms that permit, the user to</span><br><span class="line">       recombine or relink the Application with a modified version of</span><br><span class="line">       the Linked Version to produce a modified Combined Work, in the</span><br><span class="line">       manner specified by section 6 of the GNU GPL for conveying</span><br><span class="line">       Corresponding Source.</span><br><span class="line"></span><br><span class="line">       1) Use a suitable shared library mechanism for linking with the</span><br><span class="line">       Library.  A suitable mechanism is one that (a) uses at run time</span><br><span class="line">       a copy of the Library already present on the user&#x27;s computer</span><br><span class="line">       system, and (b) will operate properly with a modified version</span><br><span class="line">       of the Library that is interface-compatible with the Linked</span><br><span class="line">       Version.</span><br><span class="line"></span><br><span class="line">   e) Provide Installation Information, but only if you would otherwise</span><br><span class="line">   be required to provide such information under section 6 of the</span><br><span class="line">   GNU GPL, and only to the extent that such information is</span><br><span class="line">   necessary to install and execute a modified version of the</span><br><span class="line">   Combined Work produced by recombining or relinking the</span><br><span class="line">   Application with a modified version of the Linked Version. (If</span><br><span class="line">   you use option 4d0, the Installation Information must accompany</span><br><span class="line">   the Minimal Corresponding Source and Corresponding Application</span><br><span class="line">   Code. If you use option 4d1, you must provide the Installation</span><br><span class="line">   Information in the manner specified by section 6 of the GNU GPL</span><br><span class="line">   for conveying Corresponding Source.)</span><br><span class="line"></span><br><span class="line">  5. Combined Libraries.</span><br><span class="line"></span><br><span class="line">  You may place library facilities that are a work based on the</span><br><span class="line">Library side by side in a single library together with other library</span><br><span class="line">facilities that are not Applications and are not covered by this</span><br><span class="line">License, and convey such a combined library under terms of your</span><br><span class="line">choice, if you do both of the following:</span><br><span class="line"></span><br><span class="line">   a) Accompany the combined library with a copy of the same work based</span><br><span class="line">   on the Library, uncombined with any other library facilities,</span><br><span class="line">   conveyed under the terms of this License.</span><br><span class="line"></span><br><span class="line">   b) Give prominent notice with the combined library that part of it</span><br><span class="line">   is a work based on the Library, and explaining where to find the</span><br><span class="line">   accompanying uncombined form of the same work.</span><br><span class="line"></span><br><span class="line">  6. Revised Versions of the GNU Lesser General Public License.</span><br><span class="line"></span><br><span class="line">  The Free Software Foundation may publish revised and/or new versions</span><br><span class="line">of the GNU Lesser General Public License from time to time. Such new</span><br><span class="line">versions will be similar in spirit to the present version, but may</span><br><span class="line">differ in detail to address new problems or concerns.</span><br><span class="line"></span><br><span class="line">  Each version is given a distinguishing version number. If the</span><br><span class="line">Library as you received it specifies that a certain numbered version</span><br><span class="line">of the GNU Lesser General Public License &quot;or any later version&quot;</span><br><span class="line">applies to it, you have the option of following the terms and</span><br><span class="line">conditions either of that published version or of any later version</span><br><span class="line">published by the Free Software Foundation. If the Library as you</span><br><span class="line">received it does not specify a version number of the GNU Lesser</span><br><span class="line">General Public License, you may choose any version of the GNU Lesser</span><br><span class="line">General Public License ever published by the Free Software Foundation.</span><br><span class="line"></span><br><span class="line">  If the Library as you received it specifies that a proxy can decide</span><br><span class="line">whether future versions of the GNU Lesser General Public License shall</span><br><span class="line">apply, that proxy&#x27;s public statement of acceptance of any version is</span><br><span class="line">permanent authorization for you to choose that version for the</span><br><span class="line">Library.</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.yiheng233.com/2023/03/20/bilibili-shorten-link-tracker-remover/" data-id="clhkt1i7v0000ow6wcjw50a9s" data-title="bilibili-shorten-link-tracker-remover" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bilibili-shorten-link/" rel="tag">bilibili shorten-link</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-pixel6a-unlock-oem" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/02/pixel6a-unlock-oem/" class="article-date">
+  <time class="dt-published" datetime="2023-01-02T07:54:04.000Z" itemprop="datePublished">2023-01-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/02/pixel6a-unlock-oem/">pixel6a-unlock-oem</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="pixel-6a-的oem-解锁的选项是灰色的怎么办"><a href="#pixel-6a-的oem-解锁的选项是灰色的怎么办" class="headerlink" title="pixel 6a 的oem 解锁的选项是灰色的怎么办"></a>pixel 6a 的oem 解锁的选项是灰色的怎么办</h1><p>要先升级到最新版本然后重置手机再次激活后联网再次重试</p>
+<p>reference：<a target="_blank" rel="noopener" href="https://youtu.be/4sgtc5XO9O0">youtube视频</a><code>https://youtu.be/4sgtc5XO9O0</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.yiheng233.com/2023/01/02/pixel6a-unlock-oem/" data-id="clhkt1i81000bow6walyy7s9w" data-title="pixel6a-unlock-oem" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pixel-oem-unlock/" rel="tag">pixel oem unlock</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-live-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/12/27/live-test/" class="article-date">
+  <time class="dt-published" datetime="2022-12-27T15:11:02.000Z" itemprop="datePublished">2022-12-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/12/27/live-test/">live-test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="live"><a href="#live" class="headerlink" title="live"></a>live</h1><iframe
+  src="<HLS_url>"
+  style="border: none"
+  height="100%"
+  width="100%"
+  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+  allowfullscreen="true"
+  id="stream-player"
+></iframe>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.yiheng233.com/2022/12/27/live-test/" data-id="clhkt1i800005ow6w5xzm7adc" data-title="live-test" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/live/" rel="tag">live</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-bilibili-bv-and-av-convert" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/12/16/bilibili-bv-and-av-convert/" class="article-date">
+  <time class="dt-published" datetime="2022-12-16T06:19:46.000Z" itemprop="datePublished">2022-12-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/12/16/bilibili-bv-and-av-convert/">bilibili-bv-and-av-convert</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="bv-av-互相转换"><a href="#bv-av-互相转换" class="headerlink" title="bv av 互相转换"></a>bv av 互相转换</h1><h2 id="这是c-代码"><a href="#这是c-代码" class="headerlink" title="这是c++代码"></a>这是c++代码</h2><p>此代码以WTFPL开源。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> ull;</span><br><span class="line"><span class="type">const</span> string table=<span class="string">&quot;fZodR9XQDSUm21yCkr6zBqiveYah8bt4xsWpHnJE7jL5VG3guMTKNPAwcF&quot;</span>;</span><br><span class="line"><span class="type">const</span> ull xorinit=<span class="number">177451812</span>;</span><br><span class="line"><span class="type">const</span> ull addinit=<span class="number">100618342136696320</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> order[<span class="number">10</span>]=&#123;<span class="number">11</span>,<span class="number">10</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">9</span>,<span class="number">5</span>,<span class="number">7</span>&#125;;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> order2[<span class="number">10</span>]=&#123;<span class="number">6</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line"><span class="function">ull <span class="title">powInt</span><span class="params">(ull x,ull n)</span></span>&#123;</span><br><span class="line">    ull powN=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;<span class="comment">//the pow func</span></span><br><span class="line">        powN*=x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> powN;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ull <span class="title">y</span><span class="params">(ull x,ull n)</span></span>&#123;</span><br><span class="line">    ull powN=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;<span class="comment">//the pow func</span></span><br><span class="line">        powN*=<span class="number">58</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (x/powN)%<span class="number">58</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">const</span> <span class="type">char</span> * argv[])</span> </span>&#123;</span><br><span class="line">    <span class="comment">// insert code here...</span></span><br><span class="line">    string in;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;put the code here to convert:\n&quot;</span>;</span><br><span class="line">    cin&gt;&gt;in;</span><br><span class="line">    <span class="keyword">if</span> (in[<span class="number">0</span>]==<span class="string">&#x27;a&#x27;</span>||in[<span class="number">0</span>]==<span class="string">&#x27;A&#x27;</span>) &#123;<span class="comment">//av to bv convert</span></span><br><span class="line">        ull numIn=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;in.<span class="built_in">length</span>();i++)&#123;</span><br><span class="line">            numIn*=<span class="number">10</span>;</span><br><span class="line">            numIn+=(in[i]-<span class="string">&#x27;1&#x27;</span>+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        numIn=numIn^xorinit;</span><br><span class="line">        numIn+=addinit;</span><br><span class="line">        ull ansTmp[<span class="number">10</span>]=&#123;<span class="number">0</span>&#125;;<span class="comment">//ans in number version and without exchange</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) &#123;</span><br><span class="line">            ansTmp[i]=<span class="built_in">y</span>(numIn, i);</span><br><span class="line">            <span class="comment">//cout&lt;&lt;ansTmp[i]&lt;&lt;endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">        ull ansTmp2[<span class="number">10</span>]=&#123;<span class="number">0</span>&#125;;<span class="comment">//ans in number version and with exchange</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) &#123;<span class="comment">//exchange</span></span><br><span class="line">            ansTmp2[order[i]<span class="number">-2</span>]=ansTmp[i];</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;BV&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) &#123;<span class="comment">//print the ans</span></span><br><span class="line">            cout&lt;&lt;table[ansTmp2[i]];</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (in[<span class="number">0</span>]==<span class="string">&#x27;b&#x27;</span>||in[<span class="number">0</span>]==<span class="string">&#x27;B&#x27;</span>) &#123;<span class="comment">//bv to av convert</span></span><br><span class="line">        ull ansTmp[<span class="number">10</span>]=&#123;<span class="number">0</span>&#125;;<span class="comment">//ans in number version and without exchange</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">0</span>; j&lt;<span class="number">58</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(in[i+<span class="number">2</span>]==table[j]) &#123;</span><br><span class="line">                    ansTmp[i]=j;</span><br><span class="line">                    <span class="keyword">goto</span> exit1;<span class="comment">//break</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        exit1:;</span><br><span class="line">            <span class="comment">//cout&lt;&lt;ansTmp[i]&lt;&lt;endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) &#123;</span><br><span class="line">            ansTmp[i]*=<span class="built_in">powInt</span>(<span class="number">58</span>,order2[i]);</span><br><span class="line">            <span class="comment">//cout&lt;&lt;ansTmp[i]&lt;&lt;endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">        ull ans=<span class="number">0</span>-addinit;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;<span class="comment">//find the sum</span></span><br><span class="line">            ans+=ansTmp[i];</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;av&quot;</span>&lt;&lt;(ans^xorinit)&lt;&lt;endl;<span class="comment">//print the ans</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;<span class="comment">//neither av nor bv</span></span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;error\n&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="致谢："><a href="#致谢：" class="headerlink" title="致谢："></a>致谢：</h4><ol>
+<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/BV1N741127Tj">av转bv号过程</a> <code>https://www.bilibili.com/BV1N741127Tj</code></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/BV1R7411y7kw">bv转av</a> <code>https://www.bilibili.com/BV1R7411y7kw</code></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/381784377/answer/1099438784">知乎大佬</a> <code>https://www.zhihu.com/question/381784377/answer/1099438784</code></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/381784377">知乎大佬</a><code>https://www.zhihu.com/question/381784377</code></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://www.wtfpl.net/about/">WTFPL</a></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Full license text:</span><br><span class="line"></span><br><span class="line"><span class="code">        DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE </span></span><br><span class="line"><span class="code">                    Version 2, December 2004 </span></span><br><span class="line"><span class="code"></span></span><br><span class="line"> Copyright (C) 2004 Sam Hocevar <span class="language-xml">&lt;sam@hocevar.net&gt;</span> </span><br><span class="line"></span><br><span class="line"> Everyone is permitted to copy and distribute verbatim or modified </span><br><span class="line"> copies of this license document, and changing it is allowed as long </span><br><span class="line"> as the name is changed. </span><br><span class="line"></span><br><span class="line"><span class="code">            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE </span></span><br><span class="line"><span class="code">   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION </span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="bullet">  0.</span> You just DO WHAT THE FUCK YOU WANT TO.</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.yiheng233.com/2022/12/16/bilibili-bv-and-av-convert/" data-id="clhkt1i7z0003ow6w4yi74i1q" data-title="bilibili-bv-and-av-convert" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bilibili/" rel="tag">bilibili</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hexo-d-command-rewrite-the-chame-file-on-github-pages" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/27/hexo-d-command-rewrite-the-chame-file-on-github-pages/" class="article-date">
+  <time class="dt-published" datetime="2022-11-27T07:44:17.000Z" itemprop="datePublished">2022-11-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/27/hexo-d-command-rewrite-the-chame-file-on-github-pages/">hexo d command rewrite the chame file on github pages</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="hexo-d-命令会重写-github-pages的chame文件"><a href="#hexo-d-命令会重写-github-pages的chame文件" class="headerlink" title="hexo d 命令会重写 github pages的chame文件"></a><code>hexo d </code>命令会重写 github pages的chame文件</h1><p>当你在github pages上设置自己的域名的时候github会在你的仓库里创建chame文件，但<code>hexo d</code>命令会覆盖chame文件导致域名的设置丢失。</p>
+<p>所以你应该在<code>./source</code>文件夹中添加CHAME文件其中包含你设置的私有域名，这样在执行<code>hexo g</code>命令和<code>hexe d</code>时chame文件会被部署到仓库中。</p>
+<p><del>readme.md 为啥要被转成html</del></p>
+<p><del>licence文件为啥不自动添加</del></p>
+<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><p>1.<a target="_blank" rel="noopener" href="https://hexo.io/docs/github-pages">hexo docs</a></p>
+<blockquote>
+<p>Note - if you specify a custom domain name with a <code>CNAME</code>, you need to add the <code>CNAME</code> file to the <code>source/</code> folder. <a target="_blank" rel="noopener" href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">More info</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.yiheng233.com/2022/11/27/hexo-d-command-rewrite-the-chame-file-on-github-pages/" data-id="clhkt1i800008ow6wgh4xbyt5" data-title="hexo d command rewrite the chame file on github pages" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-GitHub-pages/" rel="tag">hexo GitHub-pages</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Add-kali-source-to-ubuntu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/27/Add-kali-source-to-ubuntu/" class="article-date">
+  <time class="dt-published" datetime="2022-11-26T18:25:25.000Z" itemprop="datePublished">2022-11-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/27/Add-kali-source-to-ubuntu/">Add-kali-source-to-ubuntu</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="电脑坏了！！！别学"><a href="#电脑坏了！！！别学" class="headerlink" title="电脑坏了！！！别学"></a>电脑坏了！！！别学</h1><h1 id="把kali的源添加到ubuntu中"><a href="#把kali的源添加到ubuntu中" class="headerlink" title="把kali的源添加到ubuntu中"></a>把kali的源添加到ubuntu中</h1><h2 id="1-添加源"><a href="#1-添加源" class="headerlink" title="1.添加源"></a>1.添加源</h2><p>把kali的源添加到<code> /etc/apt/sources.d</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://http.kali.org/kali kali-rolling main contrib non-free</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories/">kali 官方文件</a>  <code>https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories/</code></p>
+<h2 id="2-添加kali-archive-keying-gpg"><a href="#2-添加kali-archive-keying-gpg" class="headerlink" title="2.添加kali-archive-keying.gpg"></a>2.添加kali-archive-keying.gpg</h2><p>去kali里面拷一个密钥然后<code> sudo apt-key add [path of kali-archive-keying.gpg]</code></p>
+<p><a target="_blank" rel="noopener" href="https://qastack.cn/ubuntu/291035/how-to-add-a-gpg-key-to-the-apt-sources-keyring">可以参考一下</a>  <code>https://qastack.cn/ubuntu/291035/how-to-add-a-gpg-key-to-the-apt-sources-keyring</code></p>
+<h2 id="3-sudo-apt-update"><a href="#3-sudo-apt-update" class="headerlink" title="3. sudo apt update"></a>3. sudo apt update</h2><p><del>然后ubuntu就会被滚成kali开不了机了</del>   </p>
+<p>(包冲突时可以<code>sudo dpkg -P [package name]</code> <a target="_blank" rel="noopener" href="https://askubuntu.com/questions/176121/dpkg-error-trying-to-overwrite-file-which-is-also-in">原贴</a><code> https://askubuntu.com/questions/176121/dpkg-error-trying-to-overwrite-file-which-is-also-in</code>)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.yiheng233.com/2022/11/27/Add-kali-source-to-ubuntu/" data-id="clhkt1i7x0001ow6wafagbgh7" data-title="Add-kali-source-to-ubuntu" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-run-x86-on-arm64-ubuntu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/27/run-x86-on-arm64-ubuntu/" class="article-date">
+  <time class="dt-published" datetime="2022-11-26T18:25:00.000Z" itemprop="datePublished">2022-11-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/27/run-x86-on-arm64-ubuntu/">run-x86-on-arm64-ubuntu</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="在arm64-ubuntu中运行-x86-64-程序"><a href="#在arm64-ubuntu中运行-x86-64-程序" class="headerlink" title="在arm64 ubuntu中运行 x86-64 程序"></a>在arm64 ubuntu中运行 x86-64 程序</h1><h2 id="1-抄kali-arm的官方文档"><a href="#1-抄kali-arm的官方文档" class="headerlink" title="1.抄kali arm的官方文档"></a>1.抄kali arm的官方文档</h2><ul>
+<li><p>有b站视频<a target="_blank" rel="noopener" href="https://www.bilibili.com/BV12B4y1i7dc">如何在 M1 Arm Mac 上调试 X86 Linux 应用</a>   <code>https://www.bilibili.com/BV12B4y1i7dc    </code></p>
+</li>
+<li><p>kali的官方文档<a target="_blank" rel="noopener" href="https://www.kali.org/docs/arm/x86-on-arm/">Running x86 code on ARM devices</a>    <code>https://www.kali.org/docs/arm/x86-on-arm</code></p>
+</li>
+</ul>
+<p>这里就粘一下kali的命令     </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">kali@kali:~$  </span><br><span class="line"></span><br><span class="line">kali@kali:~$ sudo apt install -y qemu-user-static binfmt-support  </span><br><span class="line"></span><br><span class="line">kali@kali:~$  </span><br><span class="line"></span><br><span class="line">kali@kali:~$ sudo dpkg --add-architecture amd64</span><br><span class="line"></span><br><span class="line">kali@kali:~$   </span><br><span class="line"></span><br><span class="line">kali@kali:~$ sudo apt update   </span><br><span class="line"></span><br><span class="line">kali@kali:~$ </span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-调整sources-list"><a href="#2-调整sources-list" class="headerlink" title="2.调整sources.list"></a>2.调整sources.list</h2><p>因为ubuntu arm用的源与ubuntu amd64用的源不一样所以要指定每一个源的架构<br><a target="_blank" rel="noopener" href="https://askubuntu.com/questions/1211022/how-to-install-i386-amd64-packages-on-arm-or-any-other-arch-from-ubuntu-ports">askububtu上的回复</a>  <code>https://askubuntu.com/questions/1211022/how-to-install-i386-amd64-packages-on-arm-or-any-other-arch-from-ubuntu-ports</code><br>在源地址前’deb’后面加<code>[arch= yourArchitecrure] </code><br>然后就可以愉快的<code>sudo apt update</code>了 </p>
+<p><del>小声说一句：chrome没法运行，不知道为啥</del>   </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.yiheng233.com/2022/11/27/run-x86-on-arm64-ubuntu/" data-id="clhkt1i81000dow6wapj86rlh" data-title="run-x86-on-arm64-ubuntu" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/27/test/" class="article-date">
+  <time class="dt-published" datetime="2022-11-26T18:18:08.000Z" itemprop="datePublished">2022-11-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/27/test/">test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.yiheng233.com/2022/11/27/test/" data-id="clhkt1i81000fow6w39e04cl3" data-title="test" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/27/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2022-11-26T17:35:13.857Z" itemprop="datePublished">2022-11-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/27/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.yiheng233.com/2022/11/27/hello-world/" data-id="clhkt1i7z0004ow6wffccg5r6" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bilibili/" rel="tag">bilibili</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bilibili-shorten-link/" rel="tag">bilibili shorten-link</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-sort-algorithm/" rel="tag">c++ sort algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-GitHub-pages/" rel="tag">hexo GitHub-pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/live/" rel="tag">live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pixel-oem-unlock/" rel="tag">pixel oem unlock</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/bilibili-shorten-link/" style="font-size: 10px;">bilibili shorten-link</a> <a href="/tags/c-sort-algorithm/" style="font-size: 10px;">c++ sort algorithm</a> <a href="/tags/hexo-GitHub-pages/" style="font-size: 10px;">hexo GitHub-pages</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/pixel-oem-unlock/" style="font-size: 10px;">pixel oem unlock</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/04/17/mergesort/">mergesort</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/20/bilibili-shorten-link-tracker-remover/">bilibili-shorten-link-tracker-remover</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/02/pixel6a-unlock-oem/">pixel6a-unlock-oem</a>
+          </li>
+        
+          <li>
+            <a href="/2022/12/27/live-test/">live-test</a>
+          </li>
+        
+          <li>
+            <a href="/2022/12/16/bilibili-bv-and-av-convert/">bilibili-bv-and-av-convert</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
