@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>yiheng233&#39;s blog</title>
+  <title>Hexo</title>
   
-  <subtitle>all passages follow cc-by-4.0</subtitle>
+  
   <link href="http://blog.yiheng233.com/atom.xml" rel="self"/>
   
   <link href="http://blog.yiheng233.com/"/>
@@ -10,7 +10,7 @@
   <id>http://blog.yiheng233.com/</id>
   
   <author>
-    <name>yiheng233</name>
+    <name>John Doe</name>
     
   </author>
   
@@ -87,7 +87,7 @@
     <link href="http://blog.yiheng233.com/2022/12/27/live-test/"/>
     <id>http://blog.yiheng233.com/2022/12/27/live-test/</id>
     <published>2022-12-27T15:11:02.000Z</published>
-    <updated>2022-12-28T08:49:22.000Z</updated>
+    <updated>2022-12-28T08:49:22.062Z</updated>
     
     <content type="html"><![CDATA[<h1 id="live"><a href="#live" class="headerlink" title="live"></a>live</h1><iframe  src="<HLS_url>"  style="border: none"  height="100%"  width="100%"  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"  allowfullscreen="true"  id="stream-player"></iframe>]]></content>
     
