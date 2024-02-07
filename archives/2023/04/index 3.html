@@ -4,19 +4,14 @@
   <meta charset="utf-8">
   
   
-  <title>Add-kali-source-to-ubuntu | yiheng233&#39;s blog</title>
+  <title>Archives: 2023/4 | yiheng233&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="电脑坏了！！！别学把kali的源添加到ubuntu中1.添加源把kali的源添加到 &#x2F;etc&#x2F;apt&#x2F;sources.d 1deb http:&#x2F;&#x2F;http.kali.org&#x2F;kali kali-rolling main contrib non-free  kali 官方文件  https:&#x2F;&#x2F;www.kali.org&#x2F;docs&#x2F;general-use&#x2F;kali-linux-sources-list">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Add-kali-source-to-ubuntu">
-<meta property="og:url" content="http://blog.yiheng233.com/2022/11/27/Add-kali-source-to-ubuntu/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="yiheng233&#39;s blog">
+<meta property="og:url" content="http://blog.yiheng233.com/archives/2023/04/index.html">
 <meta property="og:site_name" content="yiheng233&#39;s blog">
-<meta property="og:description" content="电脑坏了！！！别学把kali的源添加到ubuntu中1.添加源把kali的源添加到 &#x2F;etc&#x2F;apt&#x2F;sources.d 1deb http:&#x2F;&#x2F;http.kali.org&#x2F;kali kali-rolling main contrib non-free  kali 官方文件  https:&#x2F;&#x2F;www.kali.org&#x2F;docs&#x2F;general-use&#x2F;kali-linux-sources-list">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-11-26T18:25:25.000Z">
-<meta property="article:modified_time" content="2022-11-26T18:26:56.000Z">
 <meta property="article:author" content="yiheng233">
-<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="yiheng233's blog" type="application/atom+xml">
@@ -80,71 +75,39 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-Add-kali-source-to-ubuntu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/27/Add-kali-source-to-ubuntu/" class="article-date">
-  <time class="dt-published" datetime="2022-11-26T18:25:25.000Z" itemprop="datePublished">2022-11-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="p-name article-title" itemprop="headline name">
-      Add-kali-source-to-ubuntu
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2023" class="archive-year">2023</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2023/04/17/mergesort/" class="archive-article-date">
+  <time class="dt-published" datetime="2023-04-16T18:50:31.000Z" itemprop="datePublished">Apr 17</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2023/04/17/mergesort/">mergesort</a>
     </h1>
   
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="电脑坏了！！！别学"><a href="#电脑坏了！！！别学" class="headerlink" title="电脑坏了！！！别学"></a>电脑坏了！！！别学</h1><h1 id="把kali的源添加到ubuntu中"><a href="#把kali的源添加到ubuntu中" class="headerlink" title="把kali的源添加到ubuntu中"></a>把kali的源添加到ubuntu中</h1><h2 id="1-添加源"><a href="#1-添加源" class="headerlink" title="1.添加源"></a>1.添加源</h2><p>把kali的源添加到<code> /etc/apt/sources.d</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://http.kali.org/kali kali-rolling main contrib non-free</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories/">kali 官方文件</a>  <code>https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories/</code></p>
-<h2 id="2-添加kali-archive-keying-gpg"><a href="#2-添加kali-archive-keying-gpg" class="headerlink" title="2.添加kali-archive-keying.gpg"></a>2.添加kali-archive-keying.gpg</h2><p>去kali里面拷一个密钥然后<code> sudo apt-key add [path of kali-archive-keying.gpg]</code></p>
-<p><a target="_blank" rel="noopener" href="https://qastack.cn/ubuntu/291035/how-to-add-a-gpg-key-to-the-apt-sources-keyring">可以参考一下</a>  <code>https://qastack.cn/ubuntu/291035/how-to-add-a-gpg-key-to-the-apt-sources-keyring</code></p>
-<h2 id="3-sudo-apt-update"><a href="#3-sudo-apt-update" class="headerlink" title="3. sudo apt update"></a>3. sudo apt update</h2><p><del>然后ubuntu就会被滚成kali开不了机了</del>   </p>
-<p>(包冲突时可以<code>sudo dpkg -P [package name]</code> <a target="_blank" rel="noopener" href="https://askubuntu.com/questions/176121/dpkg-error-trying-to-overwrite-file-which-is-also-in">原贴</a><code> https://askubuntu.com/questions/176121/dpkg-error-trying-to-overwrite-file-which-is-also-in</code>)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.yiheng233.com/2022/11/27/Add-kali-source-to-ubuntu/" data-id="clho6f0dc0000je6whgcwarii" data-title="Add-kali-source-to-ubuntu" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/11/27/hexo-d-command-rewrite-the-chame-file-on-github-pages/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          hexo d command rewrite the chame file on github pages
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2022/11/27/run-x86-on-arm64-ubuntu/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">run-x86-on-arm64-ubuntu</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
 
 </section>
